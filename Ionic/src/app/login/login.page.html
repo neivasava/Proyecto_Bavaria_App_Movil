@@ -1,0 +1,36 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="danger">
+
+    <ion-buttons slot="start">
+      <ion-button (click)="toggleMenu()">
+        <ion-icon slot="icon-only" name="menu"> </ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+  <ion-title>Bavaria</ion-title>
+</ion-toolbar>
+</ion-header>
+
+
+
+<ion-content>
+  <ion-text>
+    <h1 class="ion-text-center"> Ingresar </h1>
+  </ion-text>
+  <form>
+    <ion-item lines="full">
+      <ion-label position="floating">Correo</ion-label>
+      <ion-input [(ngModel)]="email" placeholder="correo" type="text" required name="email"></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input [(ngModel)]="password" placeholder="contraseña" type="password" required name="password"></ion-input>
+    </ion-item>
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" color="danger" expand="block" (click)="ingresar($event,i)">Iniciar Sesión</ion-button>
+        <!-- <p class="ion-text.center">¿No tiene una cuenta?<strong routerLink="/registro">Registrese</strong></p> -->
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>

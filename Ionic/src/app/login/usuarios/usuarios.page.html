@@ -1,0 +1,78 @@
+<ion-app>
+  <ion-header no-border>
+    <ion-toolbar color="danger">
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/home">
+        </ion-back-button>
+      </ion-buttons>
+      <ion-title>Usuarios</ion-title>
+    </ion-toolbar>
+
+  </ion-header>
+  
+  <ion-content class="ion-padding">
+    <!-- reguilla columnas -->
+      <h1>Eliminar Usuarios</h1>
+        <ion-list>   
+               <ion-grid class="ion-margin" class="ion-grid" >
+  
+                <ion-row class="ion-row" size="12" size-log="12" size-md="12" size-sm="12" >
+                  <ion-col size="2" class="ion-col">
+                    Nombre
+                  </ion-col>
+                  <ion-col size="2" class="ion-col">
+                    Apellido
+                  </ion-col>
+                  <ion-col size="2" class="ion-col">
+                    Correo
+                  </ion-col>
+                  <ion-col size="2" class="ion-col">
+                    Contraseña
+                  </ion-col>
+                  <ion-col size="2" class="ion-col">
+                    Rol
+                  </ion-col>
+                  <ion-col size="2" class="ion-col">
+                    
+                  </ion-col>
+                 
+                </ion-row>
+    
+                <ion-row class="ion-row" *ngFor="let usuarios1 of listaUsuarios;let i=index">
+                  <ion-col size="2" class="ion-col">
+                    {{usuarios1.name}}
+                  </ion-col>
+                  <ion-col size="2" class="ion-col">
+                    {{usuarios1.last_name}}
+                  </ion-col>
+                  <ion-col size="2" class="ion-col">
+                    {{usuarios1.email}}
+                  </ion-col>
+                  <ion-col size="2" class="ion-col">
+                    {{usuarios1.password}}
+                  </ion-col>
+                  <ion-col size="2" class="ion-col">
+                    {{usuarios1.rol}}
+                  </ion-col>
+                  <ion-col size="2" class="ion-col">
+                    <ion-toolbar>
+                      <ion-buttons slot="end">
+                        <ion-button>
+                          <ion-item color="danger" (click)="eliminarUsuario($event,i)">
+                            <ion-icon name="trash-outline" size="small"></ion-icon>
+                          </ion-item>
+                        </ion-button>
+                      </ion-buttons>
+                    </ion-toolbar>
+                  </ion-col>
+
+                </ion-row>
+          
+              </ion-grid>
+        </ion-list>
+  
+      
+        
+    <ion-button color="danger" expand="full" (click)="AlertRegistro()">Continuar</ion-button>
+  </ion-content>
+  </ion-app>

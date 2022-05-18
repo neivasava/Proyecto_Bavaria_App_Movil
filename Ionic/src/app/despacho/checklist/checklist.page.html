@@ -1,0 +1,44 @@
+<ion-app>
+  <ion-header>
+    <ion-toolbar color="danger">
+      <!-- <app-menu></app-menu> -->
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/d-despacho">
+        </ion-back-button>
+      </ion-buttons>
+      <ion-title>
+        Información General
+        </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  
+  <ion-content class="ion-padding" >
+    <!-- <h1>Diligenciar Lista de Verificacion</h1> -->
+    <h1>Lista de Verificacion</h1>
+    <ion-grid>
+      <p>Diligenciar todos los campos </p>
+      
+        
+      <ion-row *ngFor="let entry of checkBolean">
+        <ion-col>
+          <ion-label>{{entry.val}}</ion-label>
+        </ion-col>
+        <ion-col>
+          <ion-checkbox [(ngModel)]="entry.isChecked" 
+                            (click)="_getSelectedItem(entry)" color="danger"></ion-checkbox>
+        </ion-col>
+      </ion-row>
+    
+    </ion-grid>
+
+    <!-- <ion-item>
+      <ion-label color="black" position="floating">Observacion</ion-label>
+      <ion-textarea></ion-textarea>
+    </ion-item> -->
+
+    <ion-button color="danger" (click)="AlertCheck()">Guardar Información</ion-button>
+    <!-- <ion-button color="danger" (click)="noGuardar()">No Guardar</ion-button> -->
+  </ion-content>
+
+</ion-app>

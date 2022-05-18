@@ -1,0 +1,167 @@
+<ion-app>
+<ion-header>
+  <ion-header>
+    <ion-toolbar color="danger">
+      <ion-title>Actualización </ion-title>
+    </ion-toolbar>
+  </ion-header>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <!-- reguilla columnas -->
+    <h1>Agregar Producto</h1>
+    <!-- <h1>Agregar Campo</h1> -->
+      <ion-list>   
+             <ion-grid class="ion-margin"  class="ion-grid">
+
+              <ion-row class="ion-row" color="danger">
+                <ion-row class="ion-row">
+                  <ion-col size="2" class="ion-col">
+                    SKU
+                  </ion-col>
+                  <ion-col size="2" class="ion-col">
+                    Producto 
+                  </ion-col>
+                  <ion-col size="2" class="ion-col">
+                    Tipo Producto
+                  </ion-col>
+                  <ion-col size="2" class="ion-col">
+                    Presentacion
+                  </ion-col>
+                  <ion-col size="2" class="ion-col">
+                    Cantidad
+                  </ion-col>
+                  <ion-col size="2" class="ion-col">
+                    Numero Estibas
+                  </ion-col>
+                </ion-row>
+
+                <ion-row class="ion-row">
+                  <ion-col size="2" class="ion-col">
+                    <ion-list *ngFor="let pedido2 of pedidoEditar.Productos" >
+                      <ion-row color="black">
+                        <ion-input text="text" name="pedido2.SKU" required [(ngModel)]="pedido2.SKU"></ion-input>
+                      </ion-row>
+                    </ion-list>
+                  </ion-col>
+
+                  <ion-col size="2" class="ion-col">
+                    <ion-list *ngFor="let pedido2 of pedidoEditar.Productos" >
+                      <ion-row color="black">
+                        <ion-input text="text" name="pedido2.SKU2" required [(ngModel)]="pedido2.SKU2"></ion-input>
+                      </ion-row>
+                    </ion-list>
+                  </ion-col>
+
+                  <ion-col size="2" class="ion-col">
+                    <ion-list *ngFor="let pedido2 of pedidoEditar.Productos" >
+                      <ion-row color="black">
+                        <ion-input text="text" name="pedido2.TIPO_DE_PROD" required [(ngModel)]="pedido2.TIPO_DE_PROD"></ion-input>
+                      </ion-row>
+                    </ion-list>
+                  </ion-col>
+
+                  <ion-col size="2" class="ion-col">
+                    <ion-list *ngFor="let pedido2 of pedidoEditar.Productos" >
+                      <ion-row color="black">
+                        <ion-input text="text" name="pedido2.PRESENTAION" required [(ngModel)]="pedido2.PRESENTAION"></ion-input>
+                      </ion-row>
+                    </ion-list>
+                  </ion-col>
+
+                  <ion-col size="2" class="ion-col">
+                    <ion-list *ngFor="let pedido2 of pedidoEditar.Productos" >
+                      <ion-row  class="ion-row" color="black">
+                        <ion-input text="text" name="pedido2.X_CANT" required [(ngModel)]="pedido2.X_CANT"></ion-input>
+                      </ion-row>
+                    </ion-list>
+                  </ion-col>
+
+                  <ion-col size="2" class="ion-col">
+                    <ion-list *ngFor="let pedido2 of pedidoEditar.Productos" >
+                      <ion-row color="black">
+                        <ion-input text="text" name="pedido2.Pallets" required [(ngModel)]="pedido2.Pallets"></ion-input>
+                      </ion-row>
+                    </ion-list>
+                  </ion-col>
+                </ion-row>
+
+              <!-- </ion-row> -->
+        
+              <!-- <ion-row class="ion-row">
+                <ion-row>
+                  <ion-col size="7">
+                    Lote
+                  </ion-col>
+                  <ion-col>
+                    <ion-input text="text" name="pedidoEditar.Lote" required [(ngModel)]="pedidoEditar.Lote" ></ion-input>
+                  </ion-col>
+                </ion-row>
+
+                <ion-row>
+                  <ion-col size="7">
+                    Fecha
+                  </ion-col>
+                  <ion-col>
+                    <ion-input text="text" name="pedidoEditar.Fecha" required [(ngModel)]="pedidoEditar.Fecha" ></ion-input>
+                  </ion-col>
+                </ion-row>
+
+                <ion-row >
+                  <ion-col size="7">
+                    Hora
+                  </ion-col>
+                  <ion-col>
+                      <ion-input text="text" name="pedidoEditar.Hora" required [(ngModel)]="pedidoEditar.Hora" ></ion-input>
+                  </ion-col>
+                </ion-row>  -->
+
+              <!-- </ion-row> -->
+
+
+            </ion-row>
+
+
+            </ion-grid>
+      </ion-list>
+
+      
+      <ion-toolbar>
+        <!-- para saber si hay o no id para Seleccionar -->
+        <ng-container>
+          <ion-item>
+            <ion-label>Escoger producto</ion-label>
+            <!-- ionChange cada ves que se seleccione algo cambie de funcion  -->
+            <ion-select [(ngModel)]="selectProducto" (ionChange)="valueProducto()">
+              <ion-label>Productos</ion-label>
+              <ion-select-option *ngFor="let pedido2 of pedidoEditar.ProductosList" [value]="pedido2">
+                {{pedido2.SKU + '-' + pedido2.SKU2}}
+                <!-- {{pedido2.SKU2}}                 -->
+              </ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ng-container>
+        
+      </ion-toolbar>
+
+      <ion-toolbar>
+        <!-- para saber si hay o no id para Seleccionar -->
+        <ng-container>
+          <ion-item>
+            <ion-label>Numero de Estibas</ion-label>
+          <!-- ionChange cada ves que se seleccione algo cambie de funcion -->
+            <ion-select [(ngModel)]="selectN_Estibas" (ionChange)="valueEstibas()">
+              <ion-label>Numero Estibas</ion-label>
+              <ion-select-option *ngFor="let pedido2 of pedidoEditar.Numero_Estibas_list" [value]="pedido2">
+                {{pedido2.Numero}}
+              </ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ng-container>
+        
+      </ion-toolbar>
+
+      
+  <ion-button color="danger" expand="full" (click)="AlertRegistro()">Continuar</ion-button>
+</ion-content>
+</ion-app>

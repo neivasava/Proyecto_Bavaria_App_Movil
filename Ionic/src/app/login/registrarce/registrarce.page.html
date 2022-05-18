@@ -1,0 +1,60 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="danger">
+
+    <ion-buttons slot="start">
+      <ion-button (click)="toggleMenu()">
+        <ion-icon slot="icon-only" name="menu"> </ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+  <ion-title>Bavaria</ion-title>
+</ion-toolbar>
+</ion-header>
+
+
+
+<ion-content>
+  <ion-text>
+    <h1 class="ion-text-center"> Registrar </h1>
+  </ion-text>
+  <form>
+    <ion-item lines="full">
+      <ion-label position="floating">Correo</ion-label>
+      <ion-input [(ngModel)]="email" placeholder="correo" type="text" required name="email"></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Nombre</ion-label>
+      <ion-input [(ngModel)]="name" placeholder="nombre" type="text" required name="name"></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Apellido</ion-label>
+      <ion-input [(ngModel)]="last_name" placeholder="apellido" type="text" required name="last_name"></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input [(ngModel)]="password" placeholder="contraseña" type="password" required name="password"></ion-input>
+    </ion-item>
+    <ion-item lines="full">
+      <ion-toolbar>
+        <!-- para saber si hay o no id para Seleccionar -->
+        <ng-container>
+          <ion-item>
+            <ion-label>Rol</ion-label>
+            <ion-select >
+              <ion-label>Escoger Rol</ion-label>
+              <ion-select-option *ngFor="let users of usuarioEditar" [value]="users">
+                {{users.nameRol}}
+              </ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ng-container>
+        
+      </ion-toolbar>
+    </ion-item>
+    <ion-row>
+      <ion-col>
+        <ion-button type="submit" color="danger" expand="block" (click)="AlertRegistro()">Registrarse</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>

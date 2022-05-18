@@ -1,0 +1,111 @@
+<ion-app>
+<ion-header>
+  <ion-header>
+    <ion-toolbar color="danger">
+      <ion-title>Agregar Producto</ion-title>
+    </ion-toolbar>
+  </ion-header>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <!-- reguilla columnas -->
+    <h1>Productos</h1>
+      <ion-list>   
+             <ion-grid class="ion-margin"  class="ion-grid">
+
+              <ion-row class="ion-row" color="danger">
+                <ion-col class="ion-row">
+                  SKU
+                </ion-col>
+                <ion-col class="ion-col">
+                  Producto
+                </ion-col>
+                <ion-col class="ion-col">
+                  Numero Estibas
+                </ion-col>
+                <ion-col class="ion-col">
+                </ion-col>
+              </ion-row>
+  
+              <ion-row class="ion-row">
+                <ion-col class="ion-col">
+                  <ion-list *ngFor="let pedido2 of pedidoEditar.Productos" >
+                    <ion-row class="ion-row" color="black">
+                      {{ pedido2.SKU }}
+                    </ion-row>
+                  </ion-list>
+                </ion-col>
+                
+                <ion-col class="ion-col">
+                  <ion-list *ngFor="let pedido2 of pedidoEditar.Productos" >
+                    <ion-row class="ion-row" color="black">
+                      {{ pedido2.Producto }}
+                    </ion-row>
+                  </ion-list>
+                 
+                </ion-col>
+                <ion-col class="ion-col">
+                  <ion-list *ngFor="let pedido2 of pedidoEditar.Productos" >
+                    <ion-row class="ion-row" color="black">
+                      {{ pedido2.Numero_Estibas_General }}
+                    </ion-row>
+                  </ion-list>
+                </ion-col>
+
+                <ion-col>
+                <ion-toolbar *ngFor="let pedido2 of pedidoEditar.Productos">
+                  <ion-buttons slot="end">
+                    <ion-button >
+                      <ion-item color="danger" (click)="editarProducto()">
+                        <ion-icon name="trash-outline" size="small"></ion-icon>
+                      </ion-item>
+                    </ion-button>
+                  </ion-buttons>
+                </ion-toolbar>
+              </ion-col>
+
+
+              </ion-row>
+        
+            </ion-grid>
+      </ion-list>
+
+      <h1>Agregar Producto</h1>
+      <ion-toolbar>
+        <!-- para saber si hay o no id para Seleccionar -->
+        <ng-container>
+          <ion-item>
+            <ion-label>Agregar Producto</ion-label>
+            <!-- ionChange cada ves que se seleccione algo cambie de funcion  -->
+            <ion-select [(ngModel)]="selectProducto" (ionChange)="valueProducto()">
+              <ion-label>Productos</ion-label>
+              <ion-select-option *ngFor="let pedido2 of pedidoEditar.ProductosList" [value]="pedido2">
+                {{pedido2.SKU + '-' + pedido2.Producto}}
+              </ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ng-container>
+        
+      </ion-toolbar>
+
+      <ion-toolbar>
+        <!-- para saber si hay o no id para Seleccionar -->
+        <ng-container>
+          <ion-item>
+            <ion-label>Numero de Estibas</ion-label>
+            <!-- ionChange cada ves que se seleccione algo cambie de funcion  -->
+            <ion-select [(ngModel)]="selectN_Estibas" (ionChange)="valueEstibas()">
+              <ion-label>Numero Estibas</ion-label>
+              <ion-select-option *ngFor="let pedido2 of pedidoEditar.Numero_Estibas_list" [value]="pedido2">
+                {{pedido2.Numero}}
+              </ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ng-container>
+        
+      </ion-toolbar>
+
+      
+  <ion-button color="danger" expand="full" (click)="AlertRegistro()">Continuar</ion-button>
+</ion-content>
+</ion-app>

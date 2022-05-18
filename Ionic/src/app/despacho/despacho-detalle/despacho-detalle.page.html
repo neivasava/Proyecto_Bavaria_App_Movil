@@ -1,0 +1,244 @@
+<ion-app>
+  <ion-header no-border>
+    <ion-toolbar color="danger">
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/despacho">
+        </ion-back-button>
+      </ion-buttons>
+      <!-- <ion-title>Generar Despacho</ion-title> -->
+      <ion-title>Generar Recepción</ion-title>
+      <!-- <ion-title>Información General</ion-title> -->
+    </ion-toolbar>
+
+  </ion-header>
+
+  <ion-content class="ion-padding">
+    <!-- reguilla columnas -->
+      <!-- <h1>Despacho</h1> -->
+      <h1>Despacho</h1>
+        <ion-list>
+          <ion-grid >
+            
+                <ion-row class="hearder-row">
+                  <ion-col size="7">
+                    ID Load
+                  </ion-col>
+                  <ion-col>
+                    <ion-input text="text" name="pedidoEditar.Load_ID" [(ngModel)]='pedidoEditar.Load_ID' required disabled></ion-input>
+                  </ion-col>
+                </ion-row>
+                <ion-row >
+                  <ion-col size="7">
+                    ID Origen
+                  </ion-col>
+                  <ion-col>
+                    <ion-input text="text" name="pedidoEditar.Shipment_Origin_Location_ID" [(ngModel)]='pedidoEditar.Shipment_Origin_Location_ID' required disabled></ion-input>
+                  </ion-col>
+                </ion-row>
+
+                <ion-row >
+                  <ion-col size="7">
+                    Origen
+                  </ion-col>
+                  <ion-col>
+                    <ion-input text="text" name="pedidoEditar.Origin_Location_Name" [(ngModel)]='pedidoEditar.Origin_Location_Name' required disabled></ion-input>
+                  </ion-col>
+                </ion-row>
+
+                <ion-row >
+                  <ion-col size="7">
+                    ID Destino
+                  </ion-col>
+                  <ion-col>
+                    <ion-input text="text" name="pedidoEditar.Shipment_Destination_Location_ID" required [(ngModel)]='pedidoEditar.Shipment_Destination_Location_ID' disabled></ion-input>
+                  </ion-col>
+                </ion-row>
+
+                <ion-row>
+                  <ion-col size="7">
+                    Destino
+                  </ion-col>
+                  <ion-col>
+                    <ion-input text="text" name="pedidoEditar.Destination_Location_Name" required [(ngModel)]="pedidoEditar.Destination_Location_Name" disabled></ion-input>
+                  </ion-col>
+                </ion-row>
+
+                <ion-row>
+                  <ion-col size="7">
+                    Tipo vehiculo SAP
+                  </ion-col>
+                  <ion-col>
+                    <ion-input text="text" name="pedidoEditar.Load_Tractor_Equipment_Type" required [(ngModel)]="pedidoEditar.Load_Tractor_Equipment_Type"  ></ion-input>
+                  </ion-col>
+                </ion-row>
+
+                <ion-row>
+                  <ion-col size="7">
+                    Numero de Estibas
+                  </ion-col>
+                  <ion-col>
+                  <ion-input text="text" name="pedidoEditar.Shipment_Pallets" required [(ngModel)]="pedidoEditar.Shipment_Pallets"  ></ion-input>
+                  </ion-col>
+                </ion-row>
+
+                <ion-row>
+                  <ion-col size="7">
+                    Peso de la carga
+                  </ion-col>
+                  <ion-col>
+                   <ion-input text="text" name="pedidoEditar.Shipment_Weight_KG" required [(ngModel)]="pedidoEditar.Shipment_Weight_KG" ></ion-input>
+                  </ion-col>
+                </ion-row>
+
+                <ion-row>
+                  <ion-col size="7">
+                    Placa
+                  </ion-col>
+                  <ion-col>
+                   <ion-input text="text" name="pedidoEditar.Vehicle_ID" required [(ngModel)]="pedidoEditar.Vehicle_ID" ></ion-input>
+                  </ion-col>
+                </ion-row>
+                <ion-row>
+                  <ion-col size="7">
+                    Tipo de Vehiculo
+                  </ion-col>
+                  <ion-col>
+                   <ion-input text="text" name="pedidoEditar.Tipo_de_Vh" required [(ngModel)]="pedidoEditar.Tipo_de_Vh" ></ion-input>
+                  </ion-col>
+                </ion-row>
+                
+
+                <ion-row class="ion-row" size="12" size-log="12" size-md="12" size-sm="12" >
+                  <ion-col size="2" class="ion-col">
+                    <h10>SKU</h10>
+                  </ion-col>
+                  <ion-col size="2" class="ion-col">
+                    <h10>Producto</h10>
+                  </ion-col>
+                  <ion-col size="2" class="ion-col">
+                    <h9>Tipo Producto</h9>
+                  </ion-col>
+                  <ion-col size="2" class="ion-col">
+                    <h10>Presentacion</h10>
+                  </ion-col>
+                  <ion-col size="2" class="ion-col">
+                    <h10>Cantidad</h10>
+                  </ion-col>
+                  <ion-col size="2" class="ion-col">
+                    <h10>Numero de Estibas</h10>
+                  </ion-col>
+                </ion-row>
+    
+                <ion-row class="ion-row">
+                  <ion-col size="2" class="ion-col">
+                    <ion-list *ngFor="let pedido2 of pedidoEditar.Productos" >
+                      <ion-row color="black">
+                        <ion-input text="text" name="pedido2.SKU" required [(ngModel)]="pedido2.SKU" ></ion-input>
+                      </ion-row>
+                    </ion-list>
+                  </ion-col>
+
+                  <ion-col size="2" class="ion-col">
+                    <ion-list *ngFor="let pedido2 of pedidoEditar.Productos" >
+                      <ion-row color="black">
+                        <ion-input text="text" name="pedido2.SKU2" required [(ngModel)]="pedido2.SKU2" ></ion-input>
+                      </ion-row>
+                    </ion-list>
+                  </ion-col>
+
+                  <ion-col size="2" class="ion-col">
+                    <ion-list *ngFor="let pedido2 of pedidoEditar.Productos" >
+                      <ion-row color="black">
+                        <ion-input text="text" name="pedido2.TIPO_DE_PROD" required [(ngModel)]="pedido2.TIPO_DE_PROD" ></ion-input>
+                      </ion-row>
+                    </ion-list>
+                  </ion-col>
+
+                  <ion-col size="2" class="ion-col">
+                    <ion-list *ngFor="let pedido2 of pedidoEditar.Productos" >
+                      <ion-row color="black">
+                        <ion-input text="text" name="pedido2.PRESENTAION" required [(ngModel)]="pedido2.PRESENTAION" ></ion-input>
+                      </ion-row>
+                    </ion-list>
+                  </ion-col>
+
+                  <ion-col size="2" class="ion-col">
+                    <ion-list *ngFor="let pedido2 of pedidoEditar.Productos" >
+                      <ion-row color="black">
+                        <ion-input text="text" name="pedido2.X_CANT" required [(ngModel)]="pedido2.X_CANT" ></ion-input>
+                      </ion-row>
+                    </ion-list>
+                  </ion-col>
+
+                  <ion-col size="2" class="ion-col">
+                    <ion-list *ngFor="let pedido2 of pedidoEditar.Productos" >
+                      <ion-row color="black">
+                        <ion-input text="text" name="pedido2.Pallets" required [(ngModel)]="pedido2.Pallets" ></ion-input>
+                      </ion-row>
+                    </ion-list>
+                    <ion-toolbar>
+                      <ion-buttons slot="end">
+                        <ion-button>
+                          <ion-item color="danger" (click)="editarProducto()">
+                            <ion-icon name="add-circle" size="small"></ion-icon>
+                          </ion-item>
+                        </ion-button>
+                      </ion-buttons>
+                    </ion-toolbar>
+                  </ion-col>
+                </ion-row>
+
+                <ion-row>
+                  <ion-col size="7">
+                    Lote
+                  </ion-col>
+                  <ion-col>
+                    <ion-input text="text" name="pedidoEditar.Lote" required [(ngModel)]="pedidoEditar.Lote" disabled ></ion-input>
+                  </ion-col>
+                </ion-row>
+
+                <ion-row>
+                  <ion-col size="7">
+                    Fecha de vencimiento
+                  </ion-col>
+                  <ion-col>
+                    <ion-input text="text" name="pedidoEditar.Fecha" required [(ngModel)]="pedidoEditar.Fecha" disabled ></ion-input>
+                  </ion-col>
+                </ion-row>
+
+                <ion-row >
+                  <ion-col size="7">
+                    Hora de produccion
+                  </ion-col>
+                  <ion-col>
+                <ion-input text="text" name="pedidoEditar.Hora" required [(ngModel)]="pedidoEditar.Hora" disabled ></ion-input>
+                  </ion-col>
+                </ion-row>
+
+
+                <ion-toolbar>
+                  <ion-buttons slot="end">
+                    <ion-button>
+                      <ion-item color="danger" (click)="editarProducto()">
+                        <ion-icon name="add-circle-outline" size="full"></ion-icon>
+                      </ion-item>
+                    </ion-button>
+                  </ion-buttons>
+                </ion-toolbar>
+
+                
+
+              </ion-grid>
+        </ion-list>
+        <ion-button color="danger"  (click)="abrirModoCarge()" shape="round">Modo Carge</ion-button>
+    <ion-button color="danger"  expand="full" (click)="AlertRegistro()">Generar Recepción</ion-button>
+    
+    
+
+
+  </ion-content>
+</ion-app>
+
+
+
+

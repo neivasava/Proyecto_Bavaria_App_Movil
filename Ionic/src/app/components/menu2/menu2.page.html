@@ -1,0 +1,55 @@
+
+  <ion-menu side="start" menuId="primerMenu" contentId="principal">
+    <ion-header>
+      <ion-toolbar color="danger">
+        <ion-title>Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    
+    <ion-content>
+      <ion-list>
+        <ion-menu-toggle>
+          <ion-item [routerLink] ="['g-despacho']" >Generar Despacho</ion-item>
+        </ion-menu-toggle>
+
+        <ion-menu-toggle>
+          <ion-item (click)="recepcion()" >Generar Recepción</ion-item>
+        </ion-menu-toggle> 
+
+        <ion-menu-toggle>
+          <ion-item>Buscar</ion-item>
+        </ion-menu-toggle>
+
+        <ion-menu-toggle>
+          <ion-item routerLink="/login">Iniciar Sesión</ion-item>
+        </ion-menu-toggle>
+        
+        <ion-menu-toggle >
+          <ion-item (click)="menuRegistrarUsuario()" >Registrar Usuario</ion-item>
+        </ion-menu-toggle> 
+
+        <ion-menu-toggle >
+          <ion-item (click)="menuUsuarios()" >Usuarios</ion-item>
+        </ion-menu-toggle>
+
+        <ion-menu-toggle>
+          <ion-item routerLink="/proceso" >Cargar TMS</ion-item>
+        </ion-menu-toggle>
+
+        <ion-menu-toggle>
+          <ion-item routerLink="/proceso" >Descargar TMS</ion-item>
+        </ion-menu-toggle>
+
+        <ion-menu-toggle>
+          <ion-item (click)="cerrarSesion()">Cerrar Sesión</ion-item>
+        </ion-menu-toggle>
+        
+        
+        
+        
+        
+        
+      </ion-list>
+    </ion-content>
+  
+</ion-menu>

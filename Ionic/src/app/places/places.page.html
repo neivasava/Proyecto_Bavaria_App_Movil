@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar color="danger">
+
+      <ion-buttons slot="start">
+        <ion-button (click)="toggleMenu()">
+          <ion-icon slot="icon-only" name="menu"> </ion-icon>
+        </ion-button>
+      </ion-buttons>
+
+    <ion-title>Places</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor = "let place of placesDatos" [routerLink] = "['/places', place.id]">
+      <ion-avatar slot="start">
+        <ion-img [src] = "place.imagenUrl"></ion-img>
+      </ion-avatar>
+      <ion-label>{{place.title}}</ion-label>
+    </ion-item>
+  </ion-list>
+
+  <!-- posicion no se mueva a medida q se escolones fijo -->
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button color="danger" (click)="addNewPlace()">
+      <ion-icon name ="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+</ion-content>

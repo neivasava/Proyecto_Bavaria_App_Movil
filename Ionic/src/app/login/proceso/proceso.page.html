@@ -1,0 +1,68 @@
+<app-menu></app-menu>
+<ion-header [translucent]="true">
+  <ion-toolbar color="danger">
+
+    <ion-buttons slot="start">
+      <ion-button (click)="toggleMenu()">
+        <ion-icon slot="icon-only" name="menu"> </ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+  <ion-title>Bavaria</ion-title>
+</ion-toolbar>
+</ion-header>
+
+<!-- <ion-content>
+  <ion-text>
+    <h1 class="ion-text-center"> Bienvenidos a Bavaria</h1>
+  </ion-text>
+
+  <ion-button color="danger" expand="block" (click)="entrarLogin()">Generar Despacho</ion-button>
+  <ion-button color="danger" expand="block" (click)="entrarRecepcion()">Generar Recepcion</ion-button>
+</ion-content> -->
+
+
+  <ion-content>
+    <h3>Cargar el respectivo archivo TMS </h3>
+    <!-- <h3>Descargar Archivo TMS </h3> -->
+  <!-- Upload  -->
+<form id="file-upload-form" class="uploader">
+  <input id="file-upload" type="file" 
+    (change)="fileUpload($event)"
+    name="fileUpload" accept=".xls,.xlsx,.csv" />
+
+  <label color="danger" shape="round" for="file-upload" id="file-drag">Cargar Arhivo TMS</label>
+  <!-- <label *ngIf="usuarioLogueado.rol === 'Administrador'" for="file-upload" id="file-drag">Cargar Arhivo TMS</label> -->
+</form>
+</ion-content>
+  <ion-content>
+  <div>
+    <pre>{{convertedJson}}</pre>
+  </div>
+</ion-content>
+
+<ion-content>
+  <!-- <p>Litros producidos por fabrica</p>
+  <p>2.5 millones de hectoritros por año</p> -->
+</ion-content>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

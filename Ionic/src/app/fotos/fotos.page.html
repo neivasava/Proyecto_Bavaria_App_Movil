@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar color ="danger">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref = "/g-despacho">
+      </ion-back-button>
+    </ion-buttons>
+    <!-- <ion-title>Fotos</ion-title> -->
+    <ion-title>Información General</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6" *ngFor="let fotoslist of pedidoService.fotosArray; index as position">
+        <ion-img [src]="fotoslist.webviewPath"></ion-img>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+  <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+    <ion-fab-button (click)="tomarGaleria()">
+      <ion-icon name="camera"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <img [src]="imagen" *ngIf="imagen" />
+
+
+  <ion-button color="danger" (click)="AlertCheck()">Guardar Información</ion-button>
+  <ion-button color="danger" (click)="noGuardar()">No Guardar</ion-button>
+</ion-content>
+
